@@ -6,10 +6,20 @@ use std::io::{self, Read};
 use urlencoding::encode;
 
 #[derive(Parser)]
-#[command(version="0.1.0", about="en is a simple tool for performing various encoding operations on STDIN and printing the result to STDOUT", long_about=None)]
+#[command(
+    author = "Cory Sabol",
+    version = "0.1.0",
+    about = "en(coder) is a simple tool to perform a sequence of encodings and hashings on input from STDIN and print the result to STDOUT",
+    after_help = "Examples:
+    echo \"hey\" | en \"bin\" -> 01101000 01100101 01111001 01010
+    echo \"<script>alert(1)</script>\" | en \"html url\" -> %26lt%3Bscript%26gt%3Balert%281%29%26lt%3B%26%23x2F%3Bscript%26gt%3B%0A
+    echo \":)\" | en \"b64 md5 sha1 sha256 bin\" -> 01100110 01100010 01100011 01100101...
+    "
+)]
 struct Args {
-    /// Required argument which is a string list of transformations to apply to the input - eg "url
-    /// b64 hex"
+    /// Required argument which is a string list of transformations to apply to the input.
+    /// Transformations can be chained in sequence.
+    /// E.g. "html url b64 hex"
     encodings: String,
 }
 
