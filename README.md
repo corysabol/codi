@@ -9,7 +9,7 @@
 - **Simple CLI Usage:** Easy-to-use command-line interface that works with data from STDIN, making it suitable for scripting and automation.
 
 ## ⬇️ Installation
-Currently, `en` is distributed as a binary executable. To install `en`, download the latest [release](/releases) for your operating system and architecture, and place it in a directory included in your system's PATH.
+Currently, `en` is distributed as a binary executable. To install `en`, download the latest [release](https://github.com/corysabol/en/releases) for your operating system and architecture, and place it in a directory included in your system's PATH.
 
 ## 📖 Usage
 ```plaintext
